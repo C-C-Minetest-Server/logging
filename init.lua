@@ -1,7 +1,8 @@
 -- logging/init.lua
 -- Create logging functions for mods easily
 --[[
-    Copyright (C) 2024  1F616EMO
+    logging: Create logging functions for mods easily
+    Copyright (C) year  name of author
 
     This library is free software; you can redistribute it and/or
     modify it under the terms of the GNU Lesser General Public
@@ -15,8 +16,7 @@
 
     You should have received a copy of the GNU Lesser General Public
     License along with this library; if not, write to the Free Software
-    Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301
-    USA
+    Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 ]]
 
 logging = {}
@@ -59,7 +59,7 @@ end
 
 function logging.logger(mod)
     if not mod then
-        mod = minetest.get_current_modname()
+        mod = minetest.get_current_modname() or "???"
     end
     return setmetatable({
         mod = mod,
