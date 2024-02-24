@@ -2,7 +2,7 @@
 -- Create logging functions for mods easily
 --[[
     logging: Create logging functions for mods easily
-    Copyright (C) year  name of author
+    Copyright (C) 2024  1F616EMO
 
     This library is free software; you can redistribute it and/or
     modify it under the terms of the GNU Lesser General Public
