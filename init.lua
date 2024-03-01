@@ -46,6 +46,16 @@ index_table.raise = function(self, msg)
     error(logging.format_message(self.mod, msg), 2)
 end
 
+-- Assertion
+index_table.assert = function(self, condition, msg)
+    if condition then return end
+
+    if not msg then
+        msg = "Assertion failed!"
+    end
+    return index_table.raise(self, msg)
+end
+
 -- Create sublogger
 index_table.sublogger = function(self, name)
     return logging.logger(self.mod .. "." .. name)

@@ -22,6 +22,10 @@ local sublogger = logger:sublogger("mycomponent")
 sublogger:action("Test action")
 --- Output: ACTION[Main]: [mymod.mycomponent] Test action
 
+-- Assert if an condition is true
+sublogger:assert(true, "lol")
+--- Output: nothing (assertion succeed)
+
 -- Raise an error with the given message
 sublogger:raise("Test crash")
 --- Result: Crashes with "[mymod.mycomponent] Test crash"
