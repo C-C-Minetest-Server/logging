@@ -48,7 +48,7 @@ end
 
 -- Assertion
 index_table.assert = function(self, condition, msg)
-    if condition then return end
+    if condition then return condition end
 
     if not msg then
         msg = "Assertion failed!"
