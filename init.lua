@@ -48,12 +48,10 @@ end
 
 -- Assertion
 index_table.assert = function(self, condition, msg)
-    if condition then return condition end
-
     if not msg then
         msg = "Assertion failed!"
     end
-    return index_table.raise(self, msg)
+    return assert(condition, logging.format_message(self.mod, msg))
 end
 
 -- Create sublogger
