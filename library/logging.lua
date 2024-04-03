@@ -5,6 +5,7 @@
 -- SPDX-License-Identifier: LGPL-2.0-or-later
 
 ---Create logging functions for mods easily
+---@type table
 logging = {}
 
 ---Class of logger
@@ -15,6 +16,7 @@ local Logger = {}
 ---Format a message with the mod name and the message
 ---@param mod string
 ---@param msg string
+---@return string log_message
 function logging.format_message(mod, msg) end
 
 ---Create a new logger
