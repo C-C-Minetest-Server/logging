@@ -91,15 +91,16 @@ function Logger:raise(msg, ...) end
 
 ---Raise an error with `msg` if the given `condition` is `false` or `nil`.
 ---Otherwise, return the `condition`.
----@param condition any
+---@generic T
+---@param condition T
 ---@param msg? string Defaults to `"Assertion failed!"`
 ---@param ... any Passed into `string.format` if present.
+---@return T
 ---@see assert
 function Logger:assert(condition, msg, ...) end
 
 ---Create a sublogger, whose `mod` will be `{mod}.{name}`
 ---@param name string The appended name
----@param ... any Passed into `string.format` if present.
 ---@return Logger sublogger
 ---@see logging.logger
 function Logger:sublogger(name) end
