@@ -33,7 +33,12 @@ end
 
 -- Debug
 index_table.debug = function(self, ...)
-    self:none(logging.format_message(self.mod, table.concat({ ... }, "\t")))
+    local items = {}
+    for _, value in ipairs({ ... }) do
+        items[#items + 1] = value
+        items[#items + 1] = "\t"
+    end
+    self:none(unpack(items))
 end
 
 -- Raise error
