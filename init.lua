@@ -21,13 +21,13 @@ local index_table = {}
 
 -- Any level
 index_table.log = function(self, lvl, msg, ...)
-    minetest.log(lvl, logging.format_message(self.mod, msg, ...))
+    return minetest.log(lvl, logging.format_message(self.mod, msg, ...))
 end
 
 -- Normal loggings
 for _, lvl in ipairs({ "none", "error", "warning", "action", "info", "verbose" }) do
     index_table[lvl] = function(self, msg, ...)
-        minetest.log(lvl, logging.format_message(self.mod, msg, ...))
+        return minetest.log(lvl, logging.format_message(self.mod, msg, ...))
     end
 end
 
@@ -45,7 +45,7 @@ end
 
 -- Raise error
 index_table.raise = function(self, msg, ...)
-    error(logging.format_message(self.mod, msg, ...), 2)
+    return error(logging.format_message(self.mod, msg, ...), 2)
 end
 
 -- Assertion
