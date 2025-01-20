@@ -32,8 +32,15 @@ for _, lvl in ipairs({ "none", "error", "warning", "action", "info", "verbose" }
 end
 
 -- Debug
+local function concat_args(...)
+	local n, t = select("#", ...), {...}
+	for i = 1, n do
+		t[i] = tostring(t[i])
+	end
+	return table.concat(t, "\t")
+end
 index_table.debug = function(self, ...)
-    self:none(logging.format_message(self.mod, table.concat({ ... }, "\t")))
+    return self:none(concat_args(...))
 end
 
 -- Raise error
