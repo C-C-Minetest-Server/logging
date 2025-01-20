@@ -34,9 +34,12 @@ end
 -- Debug
 index_table.debug = function(self, ...)
     local items = {}
-    for _, value in ipairs({ ... }) do
+    local last_index = #items
+    for index, value in ipairs({ ... }) do
         items[#items + 1] = value
-        items[#items + 1] = "\t"
+        if index < last_index then
+            items[#items + 1] = "\t"
+        end
     end
     self:none(unpack(items))
 end
