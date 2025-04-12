@@ -25,7 +25,7 @@ index_table.log = function(self, lvl, msg, ...)
 end
 
 -- Normal loggings
-for _, lvl in ipairs({ "none", "error", "warning", "action", "info", "verbose" }) do
+for _, lvl in ipairs({ "none", "error", "warning", "action", "info", "verbose", "deprecated" }) do
     index_table[lvl] = function(self, msg, ...)
         return minetest.log(lvl, logging.format_message(self.mod, msg, ...))
     end

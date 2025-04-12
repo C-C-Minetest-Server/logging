@@ -76,6 +76,12 @@ function Logger:info(msg, ...) end
 ---@see minetest.log
 function Logger:verbose(msg, ...) end
 
+---Log a message in the "deprecated" log level.
+---@param msg string The message to be logged.
+---@param ... any Passed into `string.format` if present.
+---@see minetest.log
+function Logger:deprecated(msg, ...) end
+
 ---Equivalent to `Logger:none(table.concat({...}, "\t"))`
 ---@vararg any The information to be logged
 ---@param ... any Passed into `string.format` if present.
